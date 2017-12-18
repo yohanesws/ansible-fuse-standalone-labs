@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.0.7] - 18/12/2017 - Seven Release
+### Added
+  * New host variables ( maven_repository ) *Fuse Install* and *Fuse Deploy*
+    to accept multiple repos setting
+  * New host variables ( binary['folder'] ) *Fuse Install* to accept other location of fuse binary
+  * Add repo setting for *Fuse Install*
+  * Remove all bundles word at playbook name expect in the role
+
 ## [0.0.6] - 07/06/2017 - Sixth Release
 ### Added
   * Identify maven version of the product in some templates using the global

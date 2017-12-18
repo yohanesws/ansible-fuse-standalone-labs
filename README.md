@@ -6,9 +6,10 @@ a set of different roles:
 
 * **fuse-install**: Deploys a set of Red Hat JBoss Fuse Standalone instances on several hosts.
 * **fuse-uninstall**: Uninstall a set of Red Hat JBoss Fuse Standalone instances from several hosts.
-* **fuse-deploy-bundle**: Deploys a set of Application Bundles on several hosts.
-* **fuse-undeploy-bundle**: Undeploys a set of Application Bundles on several hosts.
+* **fuse-deploy**: Deploys a set of Application Bundles on several hosts.
+* **fuse-undeploy**: Undeploys a set of Application Bundles on several hosts.
 * **fuse-patch**: Patch a set of Red Hat JBoss Fuse Standalone instances from several hosts.
+* **fuse-start**: Starting fuse standalone service on several hosts.
 
 These roles with the right configuration will allow you to deploy a full complex
 Red Hat JBoss Fuse environment and automate the most common tasks.
