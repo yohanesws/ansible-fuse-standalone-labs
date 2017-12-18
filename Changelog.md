@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
   * New host variables ( maven_repository ) *Fuse Install* and *Fuse Deploy*
     to accept multiple repos setting
-  * New host variables ( binary['folder'] ) *Fuse Install* to accept other location of fuse binary
+  * New host variables ( binary['folder'] ) *Fuse Install* and *Fuse Patch* to accept other location of fuse binary
   * Add repo setting for *Fuse Install*
   * Remove all bundles word at playbook name expect in the role
 

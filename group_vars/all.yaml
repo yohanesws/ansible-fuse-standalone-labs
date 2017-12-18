@@ -1,7 +1,7 @@
 #Fuse Instalation Source
 
 binary:
-  folder: '/Users/yohanesws/RedHat/Installer/'
+  folder: 'Users/yohanesws/RedHat/Installer/'
 
 # Fuse Version and Patch
 fuse:

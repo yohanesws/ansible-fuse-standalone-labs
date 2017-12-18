@@ -1,11 +1,11 @@
 ---
 - name: Uninstall Playbook of a Fuse Standalone Environment
   hosts: fuse-lab-environment
-  remote_user: root
+  # remote_user: root
   gather_facts: true
   become: yes
-  become_user: root
-  become_method: sudo
+  # become_user: root
+  # become_method: sudo
   roles:
-    - { role: fuse-uninstall, esb_name: 'esb01' }
-    - { role: fuse-uninstall, esb_name: 'esb02' }
+    - { role: fuse-uninstall, esb_name: 'fuseesb' }
+    # - { role: fuse-uninstall, esb_name: 'esb02' }
