@@ -1,14 +1,19 @@
+#Fuse Instalation Source
+
+binary:
+  folder: '/Users/yohanesws/RedHat/Installer/'
+
 # Fuse Version and Patch
 fuse:
   version: '6.3.0'
-  patch: '262'
-  maven_version: '630262'
+  patch: '187'
+  maven_version: '630187' #fuse version 6.3.0 patch 187 --> 630187
 
 # Patch Fuse Version and Patch
 fuse_patch:
   version: '6.3.0'
-  patch: '262'
-  maven_version: '630262'
+  patch: '187'
+  maven_version: '630187'
 
 # OS User to install/execute Fuse
 user:
@@ -74,78 +79,14 @@ fuse_client: '{{ fuse_home }}/bin/client -r 3 -d 10 -u {{ fuse_users.admin.usern
 # Applications Home
 app_home: '/opt/fuse/applications'
 
+# maven_repository_manager: http://172.16.1.1:8381/artifactory/libs-snapshot
+
 # Maven Repository
-maven_repository_manager: http://192.168.122.212:8081/nexus/content/groups/public
-
-# Camel A-MQ Samples from https://github.com/rmarting/camel-amq-samples/tree/karaf-fuse-6.3.0
-# Camel CXF Samples from https://github.com/rmarting/fuse-demo/tree/karaf-fuse-6.3.0
-
-# Application List to deploy
-applications:
-  -
-    groupId: com.redhat.camel
-    artifactId: camel-amq-consumer
-    version: 1.1.0-SNAPSHOT
-  -
-    groupId: com.redhat.camel
-    artifactId: camel-amq-producer
-    version: 1.1.0-SNAPSHOT
-  -
-    groupId: com.redhat.camel
-    artifactId: camel-amq-forwarder
-    version: 1.1.0-SNAPSHOT
-
-# Bundles List to deploy
-bundles:
-  -
-    groupId: com.redhat.fuse.demo
-    artifactId: camel-cxfrs
-    version: 1.1.0-SNAPSHOT
-  -
-    groupId: com.redhat.fuse.demo
-    artifactId: camel-cxf
-    version: 1.1.0-SNAPSHOT
-
-# Features List to deploy
-
-features:
-  -
-    groupId: com.redhat.fuse.demo
-    artifactId: fuse-demo-features
-    version: 1.1.0-SNAPSHOT
-    name: fuse-demo-features
-
-# Application List to undeploy
-applications_undeploy:
-  -
-    groupId: com.redhat.camel
-    artifactId: camel-amq-consumer
-    version: 1.1.0-SNAPSHOT
-  -
-    groupId: com.redhat.camel
-    artifactId: camel-amq-producer
-    version: 1.1.0-SNAPSHOT
-  -
-    groupId: com.redhat.camel
-    artifactId: camel-amq-forwarder
-    version: 1.1.0-SNAPSHOT
-
-# Bundles List to undeploy
-bundles_undeploy:
-  -
-    groupId: com.redhat.fuse.demo
-    artifactId: camel-cxfrs
-    version: 1.1.0-SNAPSHOT
-  -
-    groupId: com.redhat.fuse.demo
-    artifactId: camel-cxf
-    version: 1.1.0-SNAPSHOT
-
-# Features List to undeploy
-
-features_undeploy:
-  -
-    groupId: com.redhat.fuse.demo
-    artifactId: fuse-demo-features
-    version: 1.1.0-SNAPSHOT
-    name: fuse-demo-features
+maven_repository:
+  - 
+    url: 'http://172.16.1.1:8381/artifactory/libs-release' 
+    id: 'local.release'
+    extra: ''
+  - url: 'http://172.16.1.1:8381/artifactory/libs-snapshot'
+    id: 'local.snapshot'
+    extra: '@snapshots'

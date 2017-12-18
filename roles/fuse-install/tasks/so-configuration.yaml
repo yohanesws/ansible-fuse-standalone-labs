@@ -1,10 +1,17 @@
 ---
-- name: Grant RHEL and Fuse repos enabled
-  shell: subscription-manager repos --enable=rhel-7-server-rpms
-  register: repo_enabled
-  # failed_when: "repo_enabled.rc != 0"
-  ignore_errors: yes
-  when: ansible_os_family == "RedHat"
+# - name: Grant RHEL and Fuse repos enabled
+#   shell: subscription-manager repos --enable=rhel-7-server-rpms
+#   register: repo_enabled
+#   # failed_when: "repo_enabled.rc != 0"
+#   ignore_errors: yes
+#   when: ansible_os_family == "RedHat"
+- name: enable repos
+  copy:
+    src: fuse_requiredment.repo
+    dest: /etc/yum.repos.d/fuse_requiredment.repo
+    mode: 0644
+  retries: 5
+  delay: 30
 
 - name: Create user for Fuse
   user:
@@ -19,7 +26,7 @@
   with_items:
     - unzip
     - java-1.8.0-openjdk
-    - vim
+    # - vim
     - git
 
 - name: Set JAVA_HOME for Fuse user
@@ -41,3 +48,10 @@
     regexp: '^securerandom.source='
     line: 'securerandom.source=file:/dev/./urandom'
     state: present
+
+#disable firewall TODO need to change to proper open port
+- name: Stop and disable firewalld.
+  service:
+    name: firewalld
+    state: stopped
+    enabled: False

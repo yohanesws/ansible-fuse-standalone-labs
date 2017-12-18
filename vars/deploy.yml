@@ -1,0 +1,45 @@
+# https://github.com/yohanesws/fuse-sandbox
+
+# Application List to deploy
+applications:
+  -
+    groupId: com.redhat.fuse.sandbox
+    artifactId: sandbox-ws
+    # version: 1.0.2-SNAPSHOT
+    version: 1.0.1
+#   -
+#     groupId: com.redhat.fuse.sandbox
+#     artifactId: sandbox-rswrap
+#     version: 1.0.1-SNAPSHOT
+
+# Bundles List to deploy
+# bundles:
+  # -
+  #   groupId: org.codehaus.jackson
+  #   artifactId: jackson-mapper-asl
+  #   version: 1.9.0
+  # -
+  #   groupId: org.codehaus.jackson
+  #   artifactId: jackson-core-asl
+  #   version: 1.9.0
+  # -
+  #   groupId: org.codehaus.jackson
+  #   artifactId: jackson-xc
+  #   version: 1.9.0
+  # -
+  #   groupId: com.redhat.fuse.sandbox
+  #   artifactId: sandbox-rswrap
+  #   version: 1.0.1-SNAPSHOT
+  # -
+  #   groupId: com.redhat.fuse.sandbox
+  #   artifactId: sandbox-ws
+  #   version: 1.0.2-SNAPSHOT
+
+# Features List to deploy
+
+# features:
+#   -
+#     groupId: com.redhat.fuse.demo
+#     artifactId: fuse-demo-features
+#     version: 1.1.0-SNAPSHOT
+#     name: fuse-demo-features

@@ -1,0 +1,14 @@
+---
+- name: Fuse Undeploy Bundles Playbook
+  hosts: fuse-lab-environment
+  vars_files:
+    - vars/undeploy.yml
+  # remote_user: root
+  gather_facts: true
+  become: yes
+  # become_user: root
+  # become_method: sudo
+  roles:
+    # Undeploying Bundles in Two Fuse Standalone
+    - { role: fuse-undeploy, esb_name: 'fuseesb' }
+    # - { role: fuse-undeploy, esb_name: 'esb02' }
