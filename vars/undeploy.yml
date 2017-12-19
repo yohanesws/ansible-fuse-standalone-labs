@@ -5,28 +5,31 @@ applications_undeploy:
     groupId: com.redhat.fuse.sandbox
     artifactId: sandbox-ws
     version: 1.0.2-SNAPSHOT
-    # version: 1.0.1
-  # -
-  #   groupId: com.redhat.fuse.sandbox
-  #   artifactId: sandbox-rswrap
-  #   version: 1.0.1-SNAPSHOT
 
 # Bundles List to undeploy
-# bundles_undeploy:
-  # -
-  #   groupId: com.redhat.fuse.sandbox
-  #   artifactId: sandbox-ws
-  #   version: 1.0.2-SNAPSHOT
-  # -
-  #   groupId: com.redhat.fuse.sandbox
-  #   artifactId: sandbox-rswrap
-  #   version: 1.0.1-SNAPSHOT
+bundles_undeploy:
+  -
+    groupId: org.codehaus.jackson
+    artifactId: jackson-xc
+    version: 1.9.0
+  -
+    groupId: org.codehaus.jackson
+    artifactId: jackson-core-asl
+    version: 1.9.0
+  -
+    groupId: org.codehaus.jackson
+    artifactId: jackson-mapper-asl
+    version: 1.9.0
+  -
+    groupId: com.redhat.fuse.sandbox
+    artifactId: sandbox-rswrap
+    version: 1.0.1-SNAPSHOT
 
 # Features List to undeploy
-
-# features_undeploy:
-#   -
-#     groupId: com.redhat.fuse.demo
-#     artifactId: fuse-demo-features
-#     version: 1.1.0-SNAPSHOT
-#     name: fuse-demo-features
+features_undeploy:
+# to undeploy Camel Component Feature from FUSE BOM or other Karaf Features
+  -
+    groupId: org.apache.camel.karaf
+    artifactId: apache-camel
+    version: "2.17.0.redhat-{{ fuse['maven_version'] }}"
+    name: camel-jackson
