@@ -1,5 +1,8 @@
 #Fuse Instalation Source
 
+repo:
+  local: 'True'
+
 binary:
   folder: 'Users/yohanesws/RedHat/Installer/'
 

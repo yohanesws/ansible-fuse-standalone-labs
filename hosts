@@ -1,3 +1,4 @@
 [fuse-lab-environment]
-rhel7jboss01
-rhel7jboss02
+fabricnode1 ansible_host=172.16.1.2 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/Users/yohanesws/RedHat/env/fuse-6.3-sandbox/.vagrant/machines/fabricnode1/virtualbox/private_key
+fabricnode2 ansible_host=172.16.1.3 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/Users/yohanesws/RedHat/env/fuse-6.3-sandbox/.vagrant/machines/fabricnode2/virtualbox/private_key
+fabricnode3 ansible_host=172.16.1.4 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/Users/yohanesws/RedHat/env/fuse-6.3-sandbox/.vagrant/machines/fabricnode3/virtualbox/private_key

@@ -49,12 +49,11 @@
   with_items:
     - "org.apache.karaf.features-{{ esb_type | default('full') }}.cfg.j2"
 
-# - name: Define Maven Repository
-#   set_fact:
-#     maven_repository_manager_item: |
-#       {{ maven_repository_manager }}@snapshots@id=esb-maven, \
-#   when: (maven_repository_manager is defined)
-
+- name: Define Maven Repository
+  set_fact:
+    maven_repository_manager_item: |
+      {{ maven_repository_manager }}@snapshots@id=esb-maven, \
+  when: (maven_repository_manager is defined)
 
 - name: debug maven facts
   debug: 

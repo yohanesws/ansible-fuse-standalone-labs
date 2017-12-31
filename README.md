@@ -23,6 +23,7 @@ This playbook has tested with the next Ansible versions:
 		ansible 2.2.1.0
 		ansible 2.3.0.0
 		ansible 2.3.1.0
+		ansible 2.4.2.0
 
 The playbook has to be executed with **root permission**, using the **root user** or
 via **sudo** because it will install packages and configure the hosts.
@@ -42,6 +43,23 @@ Each playbook will use a set of Global Variables with values that it will be the
 These variables will be defined in **groups_vars/all.yaml** file.
 
 These variables are:
+
+* **repo**: to define using local repo or using subcription manager to enable it.
+
+		# Repository Setting
+		# local: 'False' 
+		#	to using Subcription Manager
+		# local: 'True'
+		#	to using local repository based on
+		#	roles/fuse-install/files/*.repo
+		repo:
+			local: 'True' # false
+
+* **binary**: to define fuse binary location at your ansible control machine.
+		
+		# Fuse Binary Setting
+		binary:
+  			folder: 'Users/yohanesws/RedHat/Installer/'
 
 * **fuse**: Define the Red Hat JBoss Fuse version and patch to install. This values will
 	form the path the the binaries: */tmp/jboss-fuse-karaf-{{ fuse['version'] }}.redhat-{{ fuse['patch'] }}.zip*
@@ -81,6 +99,21 @@ These variables are:
  	use administrative credentials.
 
 		fuse_client: '{{ fuse_home }}/bin/client -r 3 -d 10 -u {{ fuse_users.admin.username }} -p {{ fuse_users.admin.password }}'
+
+* **maven repo**: Maven repository configuration for Fuse to use it.
+
+		#single maven repository
+		maven_repository_manager: http://172.16.1.1:8381/artifactory/libs-snapshot
+
+		#mutiple maven repository
+		maven_repository:
+		- 
+			url: 'http://172.16.1.1:8381/artifactory/libs-release' 
+			id: 'local.release'
+			extra: ''
+		- url: 'http://172.16.1.1:8381/artifactory/libs-snapshot'
+			id: 'local.snapshot'
+			extra: '@snapshots'
 
 ### Host Variables
 
@@ -259,7 +292,7 @@ The main tasks done are:
 
 Role's execution could be configured with the following variables.
 
-Global Variables are defined in **group_vars/all.yaml** file.:
+Variables are defined in **vars/deploy.yaml** file.:
 
 * **app_home**: Location to store the applications to be deployed before to do it.
 
@@ -368,6 +401,9 @@ Playbook (*fuse-deploy-bundle.yaml* file):
 ### fuse-undeploy-bundle role
 
 This role undeploys several Application Bundles from a set of Fuse Standalone instances.
+
+
+Variables are defined in **vars/undeploy.yaml** file.:
 
 The main tasks done are:
 

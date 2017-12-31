@@ -10,11 +10,11 @@ applications_undeploy:
 bundles_undeploy:
   -
     groupId: org.codehaus.jackson
-    artifactId: jackson-xc
+    artifactId: jackson-core-asl
     version: 1.9.0
   -
     groupId: org.codehaus.jackson
-    artifactId: jackson-core-asl
+    artifactId: jackson-xc
     version: 1.9.0
   -
     groupId: org.codehaus.jackson
